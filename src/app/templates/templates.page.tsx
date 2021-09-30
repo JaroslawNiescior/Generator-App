@@ -26,7 +26,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Template } from '../../components/types/templates/types';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../components/consts';
-import { padding } from '@mui/system';
 
 interface Column {
   id: 'name' | 'createdAt' | 'updatedAt' | 'actions';

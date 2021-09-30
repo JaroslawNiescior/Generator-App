@@ -4,7 +4,6 @@ import { Code } from '../../../components/types/templates/types';
 import { useStyles } from './styles';
 import ReactHtmlParser from 'react-html-parser';
 import { Item } from '../../../components/types/generator/types';
-import placeholder from '../../../assets/placeholder.png';
 
 export const GalletyPreview: React.FC<{ code: Code, items?: Item[] }> = ({ code, items }) => {
   const classes = useStyles();
@@ -14,10 +13,9 @@ export const GalletyPreview: React.FC<{ code: Code, items?: Item[] }> = ({ code,
   const mockItem: Item = {
     id: 0,
     name: 'name_1',
-    adress: placeholder,
+    adress:
+      'http://oliclinic.pl/wp-content/uploads/2016/10/orionthemes-placeholder-image.png',
   };
-
-  console.log(placeholder)
 
   const mockItems: Item[] = Array(10).fill(mockItem);
 
@@ -43,8 +41,6 @@ export const GalletyPreview: React.FC<{ code: Code, items?: Item[] }> = ({ code,
 
 export const generateHTML = (items: Item[], code: Code) => {
   let newItems = '';
-  console.log(items);
-  console.log(code);
   items.forEach((item) => {
     newItems +=
       '\n' +
