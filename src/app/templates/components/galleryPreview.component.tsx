@@ -41,8 +41,6 @@ export const GalletyPreview: React.FC<{ code: Code, items?: Item[] }> = ({ code,
 
 export const generateHTML = (items: Item[], code: Code) => {
   let newItems = '';
-  console.log(items);
-  console.log(code);
   items.forEach((item) => {
     newItems +=
       '\n' +

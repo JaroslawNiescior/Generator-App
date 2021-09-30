@@ -32,6 +32,7 @@ import {
   TableRowClasses,
   Theme,
   TableBodyClasses,
+  Stack,
 } from '@mui/material';
 import { CommonProps } from '@mui/material/OverridableComponent';
 
@@ -128,6 +129,10 @@ export const ItemTable: React.FC<ItemTableType> = ({ items, setItems }) => {
     );
   };
 
+  const removeAllItems = () => {
+    setItems([]);
+  };
+
   const saveItem = (item: Item) => {
     let newItems = [...items];
     newItems[items.findIndex((i) => i.id === item.id)] = item;
@@ -148,15 +153,23 @@ export const ItemTable: React.FC<ItemTableType> = ({ items, setItems }) => {
 
   return (
     <Paper className={classes.root}>
-      <Typography
-        component="h1"
-        variant="h6"
-        color="inherit"
-        noWrap
-        className="title"
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={2}
       >
-        Tabela elementów
-      </Typography>
+        <Typography
+          component="h1"
+          variant="h6"
+          color="inherit"
+          noWrap
+          className="title"
+        >
+          Tabela elementów
+        </Typography>
+        <Button onClick={() => removeAllItems()}>Wyczyść elementy</Button>
+      </Stack>
       <TableContainer className={classes.container}>
         <Table size="small" stickyHeader aria-label="sticky table">
           <TableHead>

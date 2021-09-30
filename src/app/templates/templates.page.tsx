@@ -19,10 +19,7 @@ import moment from 'moment';
 
 import { useStyles } from './components/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  deleteTemplate,
-  fetchTemplates,
-} from '../../actions/templates';
+import { deleteTemplate, fetchTemplates } from '../../actions/templates';
 import { RootState } from '../../reducers';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -49,7 +46,7 @@ export const Templates: React.FC = () => {
   const dispatch = useDispatch();
   const templates = useSelector((state: RootState) => state.templates);
 
-  moment.locale("pl");
+  moment.locale('pl');
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -80,6 +77,9 @@ export const Templates: React.FC = () => {
         justifyContent="space-between"
         alignItems="center"
         spacing={2}
+        sx={{
+          padding: '10px',
+        }}
       >
         <Typography
           component="h1"

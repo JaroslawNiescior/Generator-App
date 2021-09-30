@@ -75,7 +75,6 @@ export const Generator: React.FC = () => {
 
   const generateCode = async () => {
     setGenerateLoader(true);
-    console.log(items, selectedTemplate.code)
     const html = generateHTML(items, selectedTemplate.code);
     const css = selectedTemplate.code.css;
     setCode({ html, css });
