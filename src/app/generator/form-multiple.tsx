@@ -190,7 +190,7 @@ export const ItemFormMultiple: React.FC<{
                           onBlur={handleBlur}
                           size="small"
                         >
-                          <MenuItem value={'svg'}>png</MenuItem>
+                          <MenuItem value={'svg'}>svg</MenuItem>
                           <MenuItem value={'png'}>png</MenuItem>
                           <MenuItem value={'jpg'}>jpg</MenuItem>
                           <MenuItem value={'jpeg'}>jpeg</MenuItem>
