@@ -60,6 +60,9 @@ export const TemplatePicker: React.FC<{
         justifyContent="space-between"
         alignItems="center"
         spacing={2}
+        sx={{
+          padding: '10px',
+        }}
       >
         <Typography
           component="h1"

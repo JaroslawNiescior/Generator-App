@@ -17,16 +17,18 @@ import {
 
 import moment from 'moment';
 
-import { useStyles } from './components/styles';
+import { useStyles } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteTemplate, fetchTemplates } from '../../actions/templates';
+import {
+  deleteTemplate,
+  fetchTemplates,
+} from '../../actions/templates';
 import { RootState } from '../../reducers';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Template } from '../../components/types/templates/types';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../components/consts';
-import { padding } from '@mui/system';
 
 interface Column {
   id: 'name' | 'createdAt' | 'updatedAt' | 'actions';
@@ -47,7 +49,7 @@ export const Templates: React.FC = () => {
   const dispatch = useDispatch();
   const templates = useSelector((state: RootState) => state.templates);
 
-  moment.locale('pl');
+  moment.locale("pl");
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
