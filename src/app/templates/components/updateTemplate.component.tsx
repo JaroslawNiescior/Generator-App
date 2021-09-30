@@ -20,12 +20,18 @@ export const UpdateTemplate: React.FC = () => {
   const template = useSelector((state: RootState) => state.templates).find(
     (t) => t._id === id,
   );
-  const [name, setName] = useState(template!.name);
+  const [name, setName] = useState('');
   const [code, setCode] = useState<Code>(initialStateCode);
 
   useEffect(() => {
     dispatch(fetchTemplate(id));
   }, [id, dispatch]);
+
+  useEffect(() => {
+    if(template?.name){
+      setName(template.name);
+    }
+  }, [template]);
 
   return (
     <Grid className={classes.root} container spacing={1}>
